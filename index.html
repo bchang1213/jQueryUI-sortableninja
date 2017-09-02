@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI: Sortable Ninja</title>
+
+<!-- 	Local CSS file -->
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- 	jQuery library call -->
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<!-- 	jQueryUI CSS call -->
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+<!-- 	jQueryUI library -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+	<!-- WORK AREA -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//DISPLAY THE IMAGES USING A FOR LOOP
+			for (var i = 1; i < 6; i++){
+				$("div").append("<img src='sort"+ i +".png' alt='ninja"+i+"'>");
+			};
+
+
+		});
+		// MAKING THE NINJA DIV SORTABLE, containing the images within the id #ninja, allowing the images to revert to their original position.
+		$(function(){
+			$("#ninja").sortable({
+				revert: "true", containment: "#ninja"
+			});
+				
+			// $("img").draggable({
+			// 	connectToSortable: "#ninja", revert: "invalid", axis: "y", containment: "#ninja", scroll: false
+			// });
+		});
+
+	</script>
+
+</head>
+<body>
+	<div id= "ninja"></div>
+</body>
+</html>
